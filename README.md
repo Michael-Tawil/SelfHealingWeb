@@ -1,17 +1,17 @@
 # Auto-Healing Web Tier
 
-Terraform code for a self-healing, load-balanced web tier on AWS.
+Terraform code for a self-healing and load-balanced web tier on AWS.
 
 ## Cloud Choice
 
-AWS — mature Terraform provider, well-documented, and I'm most familiar with its patterns.
+AWS: mature well-documented for TerraForm and im most familiar with its patterns.
 
 ## Architecture
 
 - VPC with 2 public subnets across 2 AZs (ap-southeast-2a, ap-southeast-2b)
 - Internet Gateway for public access
 - Launch Template running Amazon Linux 2 + NGINX via `user_data`
-- Auto Scaling Group: desired=2, min=1, max=3, spread across both AZs
+- Auto Scaling Group: desired = 2, min = 1, max = 3, spread across both AZs
 - Application Load Balancer + Target Group + HTTP listener
 
 ## How It Works
